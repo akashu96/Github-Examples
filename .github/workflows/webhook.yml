@@ -1,4 +1,4 @@
-name: Webhook Event example
+name: Webhook Listener
 
 on:
   repository_dispatch:
