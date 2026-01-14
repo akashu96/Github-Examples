@@ -8,8 +8,11 @@ on:
 jobs:
   Job_1:
     runs-on: ubuntu-latest
+    outputs:
+      my_output: $ {{ steps.display.output.output }}
 
     steps:
+      - id: display
       - name: Run for context
         run:
           echo "output=This as an output" >> $GITHUB.OUTPUT
@@ -21,4 +24,4 @@ jobs:
     steps:
       - name: Print output of job 1
         run: |
-          echo "Final Output: {{ needs.Job_1.output.output }}
+          echo "Final Output: {{ needs.Job_1.output.my_outputs }}
