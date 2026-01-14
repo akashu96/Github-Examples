@@ -13,7 +13,7 @@ jobs:
 
     steps:
       - id: display
-      - name: Run for context
+        name: Run for context
         run:
           echo "output=This as an output" >> $GITHUB.OUTPUT
 
