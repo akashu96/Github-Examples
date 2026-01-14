@@ -1,9 +1,9 @@
 name: Run github context examples
 
 on:
-  push 
-   branches:
-    - main
+  push:
+    branches:
+      - main
 
 jobs:
   Run_Context:
