@@ -1,0 +1,24 @@
+name: dependent job example
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  Job_1:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Run for context
+        run:
+          echo "output=This as an output" >> $GITHUB.OUTPUT
+
+  Job_2:
+    run-on: ubuntu-latest
+    needs: Job_1
+
+    steps:
+      - name: Print output of job 1
+        run: |
+          echo "Final Output: {{ needs.Job_1.output.output }}
