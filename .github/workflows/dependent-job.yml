@@ -19,9 +19,8 @@ jobs:
 
   Job_2:
     runs-on: ubuntu-latest
-    needs: Job_1
 
     steps:
       - name: Print output of job 1
         run: |
-          echo "Final Output: ${{ needs.Job_1.outputs.my_output }}"
+          echo "Final Output: ${{ Job_1.outputs.my_output }}"
