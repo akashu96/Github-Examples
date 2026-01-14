@@ -9,7 +9,7 @@ jobs:
   Job_1:
     runs-on: ubuntu-latest
     outputs:
-      my_output: $ {{ steps.display.output.output }}
+      my_output: $ {{ steps.display.outputs.output }}
 
     steps:
       - id: display
@@ -24,4 +24,4 @@ jobs:
     steps:
       - name: Print output of job 1
         run: |
-          echo "Final Output: {{ needs.Job_1.output.my_outputs }}
+          echo "Final Output: {{ needs.Job_1.outputs.my_outputs }}
