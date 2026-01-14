@@ -15,7 +15,7 @@ jobs:
       - id: display
         name: Run for context
         run: |
-          echo "output=This as an output" >> $GITHUB.OUTPUT
+          echo "output=This as an output" >> $GITHUB_OUTPUT
 
   Job_2:
     runs-on: ubuntu-latest
